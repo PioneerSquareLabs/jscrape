@@ -1,0 +1,35 @@
+[
+    {
+        "title": "uBlock filters",
+        "url":
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt"
+    },
+    {
+        "title": "uBlock filters – Badware risks",
+        "url":
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt"
+    },
+    {
+        "title": "uBlock filters – Privacy",
+        "url":
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt"
+    },
+    {
+        "title": "uBlock filters – Resource abuse",
+        "url":
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt"
+    },
+    {
+        "title": "uBlock filters – Unbreak",
+        "url":
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt"
+    },
+    {
+        "title": "EasyList",
+        "url": "https://easylist.to/easylist/easylist.txt"
+    },
+    {
+        "title": "EasyPrivacy",
+        "url": "https://easylist.to/easylist/easyprivacy.txt"
+    }
+]

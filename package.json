@@ -1,0 +1,22 @@
+{
+  "name": "jscrape",
+  "version": "0.0.3",
+  "private": true,
+  "main": "jscrape.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "jscrape": "./scripts/jscrape-cli.js"
+  },
+  "dependencies": {
+    "ad-block": "^4.1.1",
+    "commander": "^2.15.1",
+    "puppeteer": "^1.5.0",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "jest": "^23.1.0"
+  }
+}
