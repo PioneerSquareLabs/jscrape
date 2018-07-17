@@ -1,13 +1,26 @@
 {
-  "name": "jscrape",
+  "name": "@pioneersquare/jscrape",
   "version": "0.0.3",
-  "private": true,
+  "description":
+    "A PRELIMINARY and as yet UNFINISHED framework, built on Puppeteer, for scraping the web.",
+  "keywords": ["scrape", "scraping", "puppeteer"],
+  "homepage": "https://github.com/PioneerSquareLabs/jscrape#jscrape",
+  "bugs": "https://github.com/PioneerSquareLabs/jscrape/issues",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Dave Peck",
+      "email": "dave@psl.com",
+      "url": "https://www.psl.com/team/dave-peck"
+    }
+  ],
+  "private": false,
   "main": "jscrape.js",
   "scripts": {
     "test": "jest"
   },
   "bin": {
-    "jscrape": "./scripts/jscrape-cli.js"
+    "jscrape": "./bin/jscrape-cli.js"
   },
   "dependencies": {
     "ad-block": "^4.1.1",
