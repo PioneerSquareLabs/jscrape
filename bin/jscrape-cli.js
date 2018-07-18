@@ -99,7 +99,7 @@ const newClass = (moduleAndClassName, defaultClassName, ...args) => {
 };
 
 // Load the specified Runner instance.
-program.runner = program.runner || "jscrape";
+program.runner = program.runner || "@pioneersquare/jscrape";
 console.error(`jscrape: loading runner from ${program.runner}`);
 const runner = newClass(program.runner, "Runner", runnerOptions);
 
