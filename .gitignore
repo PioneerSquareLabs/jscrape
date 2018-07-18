@@ -57,17 +57,3 @@ typings/
 # dotenv environment variables file
 .env
 .DS_Store
-
-config/*
-!config/default.json
-*/wip/
-space/lambda/*
-!space/lambda/*.py
-!space/lambda/*.json
-!space/lambda/*.sh
-space/lambda/six.py
-tasks/scrape_*
-
-
-space/config/*
-!space/config/default.json
