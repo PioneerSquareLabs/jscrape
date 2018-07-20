@@ -1,6 +1,6 @@
 {
   "name": "@pioneersquare/jscrape",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A PRELIMINARY and as yet UNFINISHED framework, built on Puppeteer, for scraping the web.",
   "keywords": [
     "scrape",
