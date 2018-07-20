@@ -7,7 +7,7 @@ let program = require("commander");
 const path = require("path");
 
 program
-  .version("0.0.2")
+  .version("0.0.7")
   .option(
     "-s, --scraper [scraper]",
     "File and export from a runner module. Ex: foo/scraper.Scraper"
@@ -30,6 +30,11 @@ program
   .option("-i, --noimages", "Disable loading of all images")
   .option("-d, --noads", "Disable ads and trackers using recent-ish blocklists")
   .option("-u, --url [url]", "An optional URL from which to start scraping")
+  .option(
+    "-t, --throttle [ms]",
+    "If provided, perform at most one page load in the given timeframe"
+  )
+  .option("-z, --ztest", "Run jscrape in test mode")
   .parse(process.argv);
 
 if (!program.scraper) {
@@ -61,10 +66,16 @@ const runnerOptions = {
   images: !Boolean(program.noimages),
   ads: !Boolean(program.noads),
   slow: Boolean(program.slow),
+  throttle: program.throttle || 0,
   browserConsole: Boolean(program.browserconsole),
   proxy: proxyOptions,
   clearCookies: !Boolean(program.nocookies),
   clearCache: !Boolean(program.nocache)
+};
+
+const isModuleError = error => {
+  // TODO remove this HACK HACK
+  return error.toString().includes("Cannot find module");
 };
 
 // Helper routine to instantiate a named class with arbitrary arguments:
@@ -81,15 +92,16 @@ const newClass = (moduleAndClassName, defaultClassName, ...args) => {
     // Assume the module is in our load path by default...
     module = require(moduleName);
   } catch (error) {
+    // TODO XXX this logic is garbage -Dave
+
     // Particularly when we're actively developing jscrape, an error here
     // could indicate a bug in jscrape's code itself. For now, try to
     // discern the difference and explode with prejudice if it's a bug in
     // jscrape.
-    // TODO remove this HACK HACK
-    const expectedError = error.toString().includes("Cannot find module");
-    if (!expectedError) {
+    if (!isModuleError(error)) {
       throw error;
     }
+
     // ...blew up? Try to load it another way.
     const cwdModuleName = path.join(process.cwd(), moduleName);
     module = require(cwdModuleName);
@@ -101,7 +113,14 @@ const newClass = (moduleAndClassName, defaultClassName, ...args) => {
 // Load the specified Runner instance.
 program.runner = program.runner || "@pioneersquare/jscrape";
 console.error(`jscrape: loading runner from ${program.runner}`);
-const runner = newClass(program.runner, "Runner", runnerOptions);
+let runner = null;
+
+if (program.ztest) {
+  const module = require("../lib/runners.js");
+  runner = new module.Runner(runnerOptions);
+} else {
+  runner = newClass(program.runner, "Runner", runnerOptions);
+}
 
 // Load the specified Scraper instance.
 console.error(`jscrape: loading scraper from ${program.scraper}`);

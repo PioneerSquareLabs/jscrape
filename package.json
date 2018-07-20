@@ -1,12 +1,9 @@
 {
   "name": "@pioneersquare/jscrape",
   "version": "0.0.6",
-  "description": "A PRELIMINARY and as yet UNFINISHED framework, built on Puppeteer, for scraping the web.",
-  "keywords": [
-    "scrape",
-    "scraping",
-    "puppeteer"
-  ],
+  "description":
+    "A PRELIMINARY and as yet UNFINISHED framework, built on Puppeteer, for scraping the web.",
+  "keywords": ["scrape", "scraping", "puppeteer"],
   "homepage": "https://github.com/PioneerSquareLabs/jscrape#jscrape",
   "bugs": "https://github.com/PioneerSquareLabs/jscrape/issues",
   "license": "MIT",
@@ -20,7 +17,8 @@
   "private": false,
   "main": "jscrape.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "jscrape": "./bin/jscrape-cli.js"
   },
   "bin": {
     "jscrape": "./bin/jscrape-cli.js"
