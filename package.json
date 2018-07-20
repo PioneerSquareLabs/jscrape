@@ -1,9 +1,12 @@
 {
   "name": "@pioneersquare/jscrape",
-  "version": "0.0.6",
-  "description":
-    "A PRELIMINARY and as yet UNFINISHED framework, built on Puppeteer, for scraping the web.",
-  "keywords": ["scrape", "scraping", "puppeteer"],
+  "version": "0.0.7",
+  "description": "A PRELIMINARY and as yet UNFINISHED framework, built on Puppeteer, for scraping the web.",
+  "keywords": [
+    "scrape",
+    "scraping",
+    "puppeteer"
+  ],
   "homepage": "https://github.com/PioneerSquareLabs/jscrape#jscrape",
   "bugs": "https://github.com/PioneerSquareLabs/jscrape/issues",
   "license": "MIT",
