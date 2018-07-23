@@ -50,6 +50,7 @@ process.on("unhandledRejection", error => {
   console.error(
     `jscrape: Encountered an unhandled promise rejection: ${error}. Bailing.`
   );
+  console.error(error);
   process.exit(1);
 });
 
